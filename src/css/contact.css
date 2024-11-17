@@ -1,0 +1,130 @@
+.formSec {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.moreInfo .title {
+    color: var(--main-color);
+    font-size: 6.8rem;
+}
+
+form {
+    width: 50%;
+    height: 100%;
+    background-color: rgb(46, 42, 42) ;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px 10px;
+    border-radius: 5px;
+}
+
+.moreInfo .social {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.moreInfo .social div { 
+    margin: 13px 13px;
+    padding: 0 0;
+    cursor: pointer;
+}
+.moreInfo .social div i{
+    color:white;
+}
+.moreInfo .social div:hover i{
+    transition: all 0.4s ease-in-out;
+    transform: scale(1.1);
+    color: #f8c1c1;
+}
+form div,
+form button {
+    margin-bottom: 25px;
+
+}
+.for-menu {
+    display: none;
+    font-size: 2.4em;
+}
+.for-menu a {
+    color:var(--main-color);
+    border-bottom: 3px solid ;
+    cursor: pointer;
+}
+.contact_name input,
+.contact_email input {
+    width: 300px;
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    background-color: inherit;
+    border-bottom: 1px solid black;
+    color: wheat;
+}
+.contact_name input:focus::placeholder,
+.contact_email input:focus::placeholder {
+    position: relative;
+    top:25px;
+    font-size: 15px;
+}
+.contact_feedback .feedback{
+    background-color: rgb(100, 92, 92);
+    color: wheat;
+    
+    min-width: 90%;
+    height: 80px;
+    border: none;
+    border-radius: 5px;
+    resize: none;
+}
+
+form button {
+    position: relative;
+    left: 30px;
+    width: 200px;
+    height: 50px;
+    background-color:rgb(231, 11, 11);
+    border: none;
+    border-radius: 5px;
+    color:bisque;
+    font-size: 2.2rem;
+    transition: all 0.4s;
+}
+form button:hover {
+    background-color:red;
+    transform: scale(1.05);
+}
+
+@media only screen and (max-width:767px) {
+    body {
+        max-width: 96vw;
+    }
+    header {
+        display: none;
+        padding: 0 auto;
+        margin: 0 0;
+    }
+    .formSec {
+        display: block;
+    }
+
+    .moreInfo {
+        width: 90%;
+        margin-bottom: 15px;
+    }
+    .formSec form {
+        width: 90%;
+    }
+    .formSec .submitBtn {
+        position: relative;
+        left: 133px;
+    }
+    .for-menu {
+        display: block;
+    }
+}
