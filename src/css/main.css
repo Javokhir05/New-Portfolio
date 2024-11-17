@@ -183,11 +183,36 @@ section {
     text-align: center;
 }
 
-span {
+.refill-title, span {
     background: linear-gradient(to right, #93AAA1, #3A5C5E);
     background-clip: text;
     color: transparent;
 }
+
+/* .refill-title {
+    animation: fade 3s ;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count:initial;
+    animation-delay:2s;
+} */
+
+/* @keyframes fade {
+    0% {
+        background: linear-gradient(to right, #93AAA1, #3A5C5E);
+        background-clip: text;
+        color: transparent;
+    }
+    50% {
+        background: linear-gradient(to right,#3A5C5E, #93AAA1);
+        background-clip: text;
+        color: transparent;
+    }
+    100% {
+        background: linear-gradient(to right, #93AAA1, #3A5C5E);
+        background-clip: text;
+        color: transparent;
+    }
+} */
 
 .logo span {
     background: linear-gradient(to right, #93AAA1, #3A5C5E);

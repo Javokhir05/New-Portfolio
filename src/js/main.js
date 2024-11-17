@@ -32,5 +32,26 @@ document.addEventListener("DOMContentLoaded", () => {
     sections.forEach((section) =>{
         observer.observe(section);
     });
+
+    const refillTitle = document.querySelector('.refill-title');
+
+    const titleText = "Javokhir_";
+    
+    function refillFunc(){
+        refillTitle.textContent = "";
+        let index = 0;
+
+        const interval = setInterval(() =>{
+            if (index < titleText.length) {
+                refillTitle.textContent+= titleText[index++];
+            } else {
+                clearInterval(interval);
+            }
+        }, 250);
+    }
+
+    refillFunc();
+
 });
+
 
