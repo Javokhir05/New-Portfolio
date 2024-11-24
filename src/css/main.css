@@ -650,6 +650,9 @@ section {
 /* Media for phone screen */
 
 @media only screen and (max-width:767px) {
+    header {
+        max-height: 80px;
+    }
 
     .navbar, .top_btn{
         display: none;
@@ -702,7 +705,7 @@ section {
     .portfolio_container .portfolio_box {
         position: relative;
         left: 50px;
-        width: 80%;
+        width: 90vw;
         margin-bottom: 20px;
     }
     .portfolio_container .portfolio_box img {
