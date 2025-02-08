@@ -10,6 +10,17 @@
     font-family: -apple-system, sans-serif;
 }
 
+.animated-section {
+    background-color: var(--bg-color);
+    margin: 0;
+    opacity: 0; /* Initially hidden */
+    transform: translateY(60px); /* Slightly move down */
+    transition: all 0.7s ease-out;
+  }
+.animated-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
 :root {
     --bg-color:#353333;
     --second-bg-color:#111;
@@ -172,11 +183,36 @@ section {
     text-align: center;
 }
 
-span {
+.refill-title, span {
     background: linear-gradient(to right, #93AAA1, #3A5C5E);
     background-clip: text;
     color: transparent;
 }
+
+/* .refill-title {
+    animation: fade 3s ;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count:initial;
+    animation-delay:2s;
+} */
+
+/* @keyframes fade {
+    0% {
+        background: linear-gradient(to right, #93AAA1, #3A5C5E);
+        background-clip: text;
+        color: transparent;
+    }
+    50% {
+        background: linear-gradient(to right,#3A5C5E, #93AAA1);
+        background-clip: text;
+        color: transparent;
+    }
+    100% {
+        background: linear-gradient(to right, #93AAA1, #3A5C5E);
+        background-clip: text;
+        color: transparent;
+    }
+} */
 
 .logo span {
     background: linear-gradient(to right, #93AAA1, #3A5C5E);
@@ -252,24 +288,42 @@ span {
     background: var(--second-bg-color);
     color: var(--text-color);
 }
+.skills_pic {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+.skill_img {
+    width: 90%;
+}
+.skill_img img {
+    position: relative;
+    width: 40vw;
+    height: 20vw;
+    object-fit: cover;
+    border-radius: 3%;
+    box-shadow: 0 0 10px var(--main-color);
+    top: 1rem;
+}
 
 .skill_content {
     position: relative;
+    left:-15px;
     width: 100%;
     background:transparent;
-    margin: 0 15px;
+    margin: 0 0;
     padding: 10px 20px;
     border-radius: 7px;
 }
 
 .skill_content .skill_box {
-    width: 100%;
-    margin: 25px 0;
+    width: 40vw;
+    margin-bottom: 30px;
 }
 
 .skill_box .title {
     display: block;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 600;
     color: var(--text-color);
 }
@@ -328,13 +382,14 @@ span {
     position: absolute;
     right: -14px;
     top: -28px;
-    font-size: 9px;
-    font-weight: 500;
-    color: wheat;
+    font-size: 12px;
+    font-weight: 700;
+    color: rgb(114, 111, 106);
     padding: 2px 6px;
     border-radius: 3px;
     background: var(--main-color);
     z-index: 1;
+    opacity: 1;
 }
 
 .tooltip::before {
@@ -349,14 +404,35 @@ span {
     transform:translateX(-50%) rotate(45deg);
 }
 
-.skill_img img {
-    position: relative;
-    width: 30vw;
-    height: 30vw;
-    object-fit: cover;
-    border-radius: 19%;
-    box-shadow: 0 0 16px var(--main-color);
-    top: 1rem;
+.skills_banner {
+    width: 50%;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    align-items: center;
+    gap: 1.5rem;
+}
+.skills_edu, 
+.skills_secedu {
+    width: 100%;
+}
+.subtitle {
+    font-size: 3.4em;
+    color: rgb(78, 75, 75);
+    font-weight: 700;
+}
+.skills_banner .subtitle .vistula a {
+    color: rgb(11, 247, 70);
+    text-decoration: none;
+    font-weight: 400;
+    border-bottom: 3px solid rgb(11, 247, 70);
+}
+.skills_banner .subtitle .vistula:hover a {
+    color:rgb(71, 71, 231);
+    border-bottom: 2px solid rgb(71, 71, 231);
+}
+.title {
+    font-size: 1.8rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 /* Servicese section*/
@@ -486,8 +562,14 @@ span {
     font-size: 1.5rem;
     margin: 0.3rem 0.1rem;
 }
-.portfolio_layer a {
-    display: inline-flex;
+.portfolio_box .portfolio_layer .links {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+.portfolio_box .portfolio_layer .links a {
+    display: flex;
+    flex-direction: row;
     justify-content: center;
     align-self: center;
     width: 4rem;
@@ -495,6 +577,7 @@ span {
     background: var(--text-color);
     border-radius: 50%;
 }
+
 
 .portfolio_layer a i {
     position: relative;
@@ -567,6 +650,9 @@ span {
 /* Media for phone screen */
 
 @media only screen and (max-width:767px) {
+    header {
+        max-height: 80px;
+    }
 
     .navbar, .top_btn{
         display: none;
@@ -587,6 +673,17 @@ span {
         display: flex;
         flex-direction: column;
     }
+    .skills_pic,
+    .skills_banner {
+        width: 100%;
+    }
+    .skills_pic div {
+        width: 100%;
+    }
+    .skill_bar {
+        position: absolute;
+        width:  100%;
+    }
     .skill_box .title {
         font-size: 20px;
     }
@@ -597,17 +694,19 @@ span {
     }
 
     .skill_img img {
-        width: 80%;
+        width: 100%;
         height: 70%;
-        margin-left: 34px;
+
     }
+
     .portfolio .portfolio_container {
         display: flex;
         flex-direction: column;
     }
     .portfolio_container .portfolio_box {
         position: relative;
-        width: 100%;
+        left: 50px;
+        width: 80%;
         margin-bottom: 20px;
     }
     .portfolio_container .portfolio_box img {
@@ -621,3 +720,12 @@ span {
         font-size: 4.5em;
     }
 }
+
+/* @media only screen and (max-width:426px) {
+    .portfolio_container .portfolio_box {
+        position: relative;
+        left: 50px;
+        width: 70%;
+        margin-bottom: 20px;
+    }
+} */

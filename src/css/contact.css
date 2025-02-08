@@ -122,9 +122,13 @@ form button:hover {
     }
     .formSec .submitBtn {
         position: relative;
-        left: 133px;
+        left: 20px;
     }
     .for-menu {
         display: block;
+    }
+    .contact_name input,
+    .contact_email input {
+        width: 90%;
     }
 }
