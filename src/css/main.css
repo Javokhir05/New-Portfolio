@@ -705,8 +705,7 @@ section {
     }
     .portfolio_container .portfolio_box {
         position: relative;
-        left: 50px;
-        width: 80%;
+        width: 100%;
         margin-bottom: 20px;
     }
     .portfolio_container .portfolio_box img {
