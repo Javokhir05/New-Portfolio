@@ -602,12 +602,12 @@ span {
         margin-left: 34px;
     }
     .portfolio .portfolio_container {
-        display: block;
+        display: flex;
+        flex-direction: column;
     }
     .portfolio_container .portfolio_box {
         position: relative;
-        left: 50px;
-        width: 80%;
+        width: 100%;
         margin-bottom: 20px;
     }
     .portfolio_container .portfolio_box img {
@@ -615,7 +615,7 @@ span {
     }
     .footer_div {
         position: relative;
-        bottom: 45px;
+        bottom: 40px;
     }
     .footer-brand h2 {
         font-size: 4.5em;
